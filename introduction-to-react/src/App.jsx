@@ -9,8 +9,8 @@ function App() {
       <Person></Person>
       <Person></Person>
 
-      <Developer></Developer>
-      <Developer></Developer>
+      <Developer name="x" tech="c++"></Developer>
+      <Developer name='y' tech='python'></Developer>
     </>
   )
 }
@@ -27,7 +27,7 @@ function Person() {
   )
 }
 
-function Developer() {
+function Developer(props) {
 
   const devStyle = {
     border: '2px solid green',
@@ -37,8 +37,8 @@ function Developer() {
 
   return (
     <div style={devStyle}>
-      <h3>Name: </h3>
-      <h3>Tech: </h3>
+      <h3>Name: {props.name}</h3>
+      <h3>Tech: {props.tech}</h3>
     </div>
   )
 }
