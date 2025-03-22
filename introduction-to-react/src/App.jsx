@@ -1,11 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <h1>Vite + React</h1>
@@ -21,13 +17,26 @@ function App() {
 
 function Person() {
   return (
-    <p>This is a person</p>
+    <div className='person'>
+      <p>This is a person</p>
+      <p style={{
+        color: 'cyan',
+        textAlign: 'left'
+      }}>This style here is used directly</p>
+    </div>
   )
 }
 
 function Developer() {
+
+  const devStyle = {
+    border: '2px solid green',
+    margin: '10px',
+    borderRadius: '20px'
+  }
+
   return (
-    <div>
+    <div style={devStyle}>
       <h3>Name: </h3>
       <h3>Tech: </h3>
     </div>
