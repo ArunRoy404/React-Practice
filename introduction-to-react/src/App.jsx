@@ -24,7 +24,8 @@ function App() {
 
       <Salami event='eid' amount='500'></Salami>
       <Salami event='eid'></Salami>
-      <Todo task='run 10km a day'></Todo>
+      <Todo task='run 10km a day' isDone={true}></Todo>
+      <Todo task='learn webDev' isDone={false}></Todo>
     </>
   )
 }

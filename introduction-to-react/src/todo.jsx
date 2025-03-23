@@ -1,5 +1,5 @@
-export default function Todo({task}){
+export default function Todo({task, isDone}){
     return (
-        <li>do: {task}</li>
+        <li>{(isDone)?'Done':'Do'}: {task}</li>
     )
 }
