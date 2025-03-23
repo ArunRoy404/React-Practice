@@ -28,7 +28,7 @@ function App() {
   )
 }
 
-function Salami({ event, amount = 'no taka no salam' }) {
+function Salami({ event, amount = 'no taka no salami' }) {
   return (
     <div style={{
       border: '2px solid blue',
@@ -78,6 +78,9 @@ function Developer(props) {
 }
 
 function Phone(props) {
+  // console.log(props)
+  // props.brand = 'samsung'     props is read only , cant change value
+  // console.log(props)
   const phone = {
     border: '2px solid purple',
     margin: '10px',
