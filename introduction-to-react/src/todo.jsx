@@ -17,4 +17,6 @@ export default function Todo({task, isDone, time = 0}){
 
     // return isDone || <li>Task: {task}, time: {time} </li>
     // return !isDone || <li>Task: {task}, time: {time} </li>
+
+    return <li>Task: {task}, time: {time? 'I am done': 'Not done yet'} </li>
 }
