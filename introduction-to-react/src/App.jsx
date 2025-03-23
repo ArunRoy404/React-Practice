@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import Todo from './todo'
 import './App.css'
 
 const defaultStyle = {
@@ -24,6 +24,7 @@ function App() {
 
       <Salami event='eid' amount='500'></Salami>
       <Salami event='eid'></Salami>
+      <Todo task='run 10km a day'></Todo>
     </>
   )
 }
