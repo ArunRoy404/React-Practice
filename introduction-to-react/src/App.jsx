@@ -13,8 +13,8 @@ function App() {
     <>
       <h1>React Basic Components</h1>
       {/* <Person></Person>
-      <Person></Person>
-      <Person></Person> */}
+      <Person></Person>*/}
+      <Person></Person> 
 
       <Developer name="x" tech="c++"></Developer>
       <Developer name='y' tech='python'></Developer>
@@ -24,8 +24,9 @@ function App() {
 
       <Salami event='eid' amount='500'></Salami>
       <Salami event='eid'></Salami>
-      <Todo task='run 10km a day' isDone={true}></Todo>
-      <Todo task='learn webDev' isDone={false}></Todo>
+      <Todo task='run 10km a day' isDone={true} time='100'></Todo>
+      <Todo task='learn webDev' isDone={false} time='140'></Todo>
+      <Todo task='learn react' isDone={true} time='160'></Todo>
     </>
   )
 }
@@ -56,7 +57,7 @@ function Player({ game, name }) {
 function Person() {
   return (
     <div className='person'>
-      <p>This is a person</p>
+      <p title='tooltip'>This is a person</p>
       <p style={{
         color: 'cyan',
         textAlign: 'left'
