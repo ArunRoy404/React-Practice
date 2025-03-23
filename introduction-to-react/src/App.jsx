@@ -1,4 +1,6 @@
 import Todo from './todo'
+import Actor from './Actor'
+import Bird from './Birds'
 import './App.css'
 
 const defaultStyle = {
@@ -9,9 +11,27 @@ const defaultStyle = {
 }
 
 function App() {
+
+  const actors = ['x', 'y', 'z']
+  const birds = [
+    {id:1, name: 'magpie', color: 'black'},
+    {id:2, name: 'tiya', color: 'green'},
+    {id:3, name: 'eagle', color: 'brown'},
+  ]
+
   return (
     <>
       <h1>React Basic Components</h1>
+
+      {
+        birds.map(bird => <Bird key={bird.id} name={bird.name} color={bird.color}></Bird>)
+      }
+      
+
+      {/* {
+        actors.map(actor=> <Actor name={actor}></Actor>)
+      } */}
+
       {/* <Person></Person>
       <Person></Person>*/}
       <Person></Person> 
