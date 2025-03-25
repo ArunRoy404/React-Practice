@@ -3,8 +3,11 @@ import Actor from './Actor'
 import Bird from './Birds'
 import Counter from './Counter'
 import Batsman from './Batsman'
+import Users from './Users'
+
 import './App.css'
 import { use, useState } from 'react'
+import { Suspense } from 'react'
 
 const defaultStyle = {
   margin: '10px',
@@ -13,7 +16,20 @@ const defaultStyle = {
   padding: '20px'
 }
 
+
+// fetch 
+// const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users').then(r => r.json())
+
+const getUsersResponse = async() =>{
+  const response = await fetch('https://jsonplaceholder.typicode.com/users')
+  const data = await response.json()
+  return data
+}
+
+
+
 function App() {
+  const fetchUsers = getUsersResponse()
 
   const greet = () => {
     alert('Hello World!')
@@ -45,6 +61,16 @@ function App() {
   return (
     <>
       <h1>React Basic Components</h1>
+      <Suspense fallback={
+        <h2>Users Loading.....</h2>
+      }>
+        <Users fetchUsers={fetchUsers}></Users>
+      </Suspense>
+
+
+
+
+
 
       {/* event handler  */}
       <div>

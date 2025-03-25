@@ -60,3 +60,12 @@
   padding: 10px;
   margin: 20px;
 }
+
+.user-box{
+  height: 600px;
+  overflow: scroll;
+  border: 1px solid rebeccapurple;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+}
