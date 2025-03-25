@@ -53,3 +53,10 @@
   border-radius: 20px;
   margin: 10px;
 }
+
+.box{
+  border: 1px solid gold;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+}
