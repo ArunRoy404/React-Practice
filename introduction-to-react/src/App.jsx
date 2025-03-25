@@ -2,6 +2,7 @@ import Todo from './todo'
 import Actor from './Actor'
 import Bird from './Birds'
 import './App.css'
+import { useState } from 'react'
 
 const defaultStyle = {
   margin: '10px',
@@ -12,6 +13,12 @@ const defaultStyle = {
 
 function App() {
 
+  const greet = () =>{
+    alert('Hello World!')
+  }
+
+  const greet3 = (parm) => alert(`The parameter is: ${parm}`)
+
   const actors = ['x', 'y', 'z']
   const birds = [
     {id:1, name: 'magpie', color: 'black'},
@@ -19,9 +26,20 @@ function App() {
     {id:3, name: 'eagle', color: 'brown'},
   ]
 
+
   return (
     <>
       <h1>React Basic Components</h1>
+
+      {/* event handler  */}
+      <button onClick={greet}>greet</button>
+      <button onClick={()=>{alert("hello World! 2")}}>Greet 2</button>
+      <button onClick={()=>{greet3("HEHE")}} >Greet 3 with parm</button>
+
+
+    
+
+
 
       {
         birds.map(bird => <Bird key={bird.id} name={bird.name} color={bird.color}></Bird>)
