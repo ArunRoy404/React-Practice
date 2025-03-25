@@ -2,6 +2,7 @@ import Todo from './todo'
 import Actor from './Actor'
 import Bird from './Birds'
 import Counter from './Counter'
+import Batsman from './Batsman'
 import './App.css'
 import { use, useState } from 'react'
 
@@ -58,6 +59,10 @@ function App() {
         <h1>{count}</h1>
         <button onClick={() => { setCount(count + 1) }}>count</button>
       </div> */}
+
+      <dir>
+        <Batsman></Batsman>
+      </dir>
 
       <div>
         <Counter></Counter>
