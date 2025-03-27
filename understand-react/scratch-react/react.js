@@ -63,4 +63,34 @@ const NewElementFN = () =>{
 
 // should use capital at first for component 
 console.log(<NewElementFN></NewElementFN>)
-ReactDOM.createRoot(document.getElementById('root')).render(<NewElementFN></NewElementFN>)
+// ReactDOM.createRoot(document.getElementById('root')).render(<NewElementFN></NewElementFN>)
+
+
+
+// nested component 
+
+const ChildFn = ({name}) =>{
+    return (
+        <p>Hi i am {name}</p>
+    )
+}
+
+const ParentFn = (props) =>{
+    console.log(props)
+    return (
+        <div>
+            <h2>Hi i am: {props.name}</h2>
+            {
+                props.children
+            }
+        </div>
+    )
+}
+
+
+ReactDOM.createRoot(document.getElementById('root'))
+.render(
+    <ParentFn name={'x'}>
+        <ChildFn name={'y'}></ChildFn>
+    </ParentFn>
+)
