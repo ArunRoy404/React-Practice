@@ -3,7 +3,6 @@ import User from "./User"
 
 export default function Users({fetchUser}){
     const users = use(fetchUser)
-    console.log(users)
     
     
     return(
@@ -14,7 +13,7 @@ export default function Users({fetchUser}){
             <h2>User</h2>
             {
                 users.map(user=>{
-                    return <User user={user}></User>
+                    return <User key={user.id} user={user}></User>
                 })
             }
         </div>

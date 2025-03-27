@@ -1,6 +1,7 @@
 import Counter from './Counter'
 import ShowText from './ShowText'
 import Users from './Users'
+import Posts from './Posts'
 import './App.css'
 import { Suspense } from 'react'
 
@@ -33,6 +34,11 @@ function App() {
             <Users fetchUser={fetchUser} ></Users>
           </Suspense>
         </div>
+      </div>
+
+      <div>
+        <h2>Practice</h2>
+        <Posts></Posts>
       </div>
     </>
   )
