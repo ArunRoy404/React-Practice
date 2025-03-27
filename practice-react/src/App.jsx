@@ -1,4 +1,5 @@
 import Counter from './Counter'
+import ShowText from './ShowText'
 import './App.css'
 
 function App() {
@@ -10,6 +11,11 @@ function App() {
       <div>
         <h2>Task 1</h2>
         <Counter></Counter>
+      </div>
+
+      <div>
+        <h2>Task 2</h2>
+        <ShowText></ShowText>
       </div>
     </>
   )
