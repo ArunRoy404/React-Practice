@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Product from "./Product"
 
 const Products = () => {
-    const url = 'https://fakestoreapi.com/products'
+    const url = 'https://fakestoreapi.com/productss'
 
     const [products, setProducts] = useState([])
 
@@ -18,6 +18,9 @@ const Products = () => {
         .then(data =>{
             setProducts(data)
             setIsLoading(false)
+        }).catch(error=>{
+            setIsLoading(false)
+            setIsError(error.message)
         })
     }, [])
 
@@ -28,6 +31,7 @@ const Products = () => {
 
                 {/* conditional rendering */}
                 {isLoading && <h2 className="text-2xl font-bold">Loading Products..........</h2>}
+                {isError && <h2 className="text-2xl font-bold">Error: {isError}</h2>}
                 {
                     products.map(product => <Product key={product.id} product={product}></Product>)
                 }
