@@ -88,11 +88,40 @@ const ParentFn = (props) =>{
 }
 
 
+// React.useState()
+const Counter = ({name})=>{
+    // use React.useState()  which react will change the children dynaimcally 
+    const [count, setCount] = React.useState(0)
+
+    const handleCounter = ()=>{
+
+        // this is not dynamic for every childElement
+        // since it needs different child id 
+        
+        // const countElement = document.getElementById('counter')
+        // const count = parseInt(countElement.innerText)
+        // countElement.innerText = count+1
+        setCount(count+1)    
+    }
+
+    return(
+        <div>
+            <h3>{name}: <span id="counter">{count}</span></h3>
+            <button onClick={handleCounter}>Count {name}</button>
+        </div>
+    )
+}
+
 ReactDOM.createRoot(document.getElementById('root'))
 .render(
     <ParentFn name={'x'}>
         <ChildFn name={'y'}></ChildFn>
         <ChildFn name={'z'}></ChildFn>
         <ChildFn name={'a'}></ChildFn>
+        <ChildFn/>
+
+        <Counter name={'A'}/>
+        <Counter name={'B'}/>
+        <Counter name={'C'}/>
     </ParentFn>
 )
