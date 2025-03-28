@@ -92,5 +92,7 @@ ReactDOM.createRoot(document.getElementById('root'))
 .render(
     <ParentFn name={'x'}>
         <ChildFn name={'y'}></ChildFn>
+        <ChildFn name={'z'}></ChildFn>
+        <ChildFn name={'a'}></ChildFn>
     </ParentFn>
 )
