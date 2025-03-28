@@ -3,6 +3,8 @@ import Post from "./Post"
 const Posts = ({ fetchPosts }) => {
     const posts = use(fetchPosts)
 
+    
+
     return (
         <div>
             <h2 className="text-2xl font-bold">Total Post: {posts.length}</h2>
