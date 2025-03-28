@@ -1,5 +1,7 @@
 import './App.css'
 import Persons from './Components/Persons/Persons'
+import Products from './Components/Products/Products'
+
 
 function App() {
 
@@ -14,6 +16,7 @@ function App() {
       <div>
         <h1>Understand React</h1>
         <Persons persons={persons}></Persons>
+        <Products></Products>
       </div>
     </>
   )
