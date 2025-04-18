@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import './App.css'
 
 function App() {
@@ -10,10 +10,17 @@ function App() {
   }
 
   const btn2Ref = useRef(null)
-  const handleForm2 = () =>{
+  const handleForm2 = () => {
     console.log(btn2Ref.current.value)
   }
 
+  const [name, setName] = useState('hello')
+  console.log(name)
+  
+  const handleForm3 =(e)=>{
+    e.preventDefault()
+    setName('ok')
+  }
 
   return (
     <>
@@ -29,6 +36,19 @@ function App() {
         <input type="text" ref={btn2Ref} />
         <button onClick={handleForm2} >submit</button>
       </div>
+
+      <form action="" onSubmit={handleForm3}>
+        <div style={{ marginTop: '30px', border: '2px solid red' }}>
+          <h3>input value onChange</h3>
+          <input
+            type="text"
+            name='name'
+            value={name}
+            onChange={(e)=>setName(e.target.value)}
+          />
+          <button>submit</button>
+        </div>
+      </form>
     </>
   )
 }
