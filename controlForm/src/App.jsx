@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import './App.css'
+import Posts from './Posts'
 
 function App() {
 
@@ -8,8 +9,8 @@ function App() {
     console.log(e.target.name.value)
     e.target.name.value = ''
   }
-
-  const btn2Ref = useRef(null)
+  
+  const btn2Ref = useRef('null')
   const handleForm2 = () => {
     console.log(btn2Ref.current.value)
   }
@@ -49,6 +50,8 @@ function App() {
           <button>submit</button>
         </div>
       </form>
+
+      <Posts></Posts>
     </>
   )
 }
