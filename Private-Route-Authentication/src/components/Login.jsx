@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import AuthContext from '../contexts/AuthContext';
 
 const Login = () => {
-    const {signIn} = use(AuthContext)
+    const {logIn } = use(AuthContext)
 
     const [isPassVisible, setIsPassVisible] = useState(false)
     const [success, setSuccess] = useState('')
@@ -15,7 +15,7 @@ const Login = () => {
         const email = e.target.email.value
         const password = e.target.password.value
         
-        signIn(email, password)
+        logIn(email, password)
         .then(result=> {
             console.log(result)
             setSuccess('Login Successful')
