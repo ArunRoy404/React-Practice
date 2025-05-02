@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import { Link } from 'react-router';
+import AuthContext from '../contexts/AuthContext';
 
 const Login = () => {
+    const {signIn} = use(AuthContext)
 
     const [isPassVisible, setIsPassVisible] = useState(false)
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
+
+    const handleSignIn = e =>{
+        e.preventDefault()
+        const email = e.target.email.value
+        const password = e.target.password.value
+        
+        signIn(email, password)
+        .then(result=> {
+            console.log(result)
+            setSuccess('Login Successful')
+        })
+        .catch(error=>setError(error.message))
+    }
 
     return (
         <div>
@@ -15,7 +30,7 @@ const Login = () => {
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <div className="card-body">
                             <h1 className='text-3xl font-bold'>Log IN</h1>
-                            <form className="fieldset">
+                            <form onSubmit={handleSignIn} className="fieldset">
                                 <label className="label">Email</label>
                                 <input name='email' type="email" className="input" placeholder="Email" />
 

@@ -56,7 +56,7 @@ const Register = () => {
                                 <p className='text-red-400' >{error}</p>
 
                             </form>
-                            <h2>Already have an account? <Link className='underline text-blue-400' to={'/register'}>Log IN Now</Link></h2>
+                            <h2>Already have an account? <Link className='underline text-blue-400' to={'/login'}>Log IN Now</Link></h2>
                         </div>
                     </div>
                 </div>
