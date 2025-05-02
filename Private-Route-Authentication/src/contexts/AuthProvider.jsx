@@ -5,6 +5,7 @@ import { auth } from '../firebase/firebase.init';
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -25,6 +26,7 @@ const AuthProvider = ({ children }) => {
             }else{
                 setUser(null)
             }
+            setIsLoading(false)
         })
 
         return ()=>{
@@ -34,6 +36,7 @@ const AuthProvider = ({ children }) => {
 
     const userInfo = {
         user,
+        isLoading,
         createUser,
         logIn,
         logOut
