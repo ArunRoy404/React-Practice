@@ -1,6 +1,6 @@
 import React, { use, useState } from 'react';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import AuthContext from '../contexts/AuthContext';
 
 const Login = () => {
@@ -11,6 +11,8 @@ const Login = () => {
     const [error, setError] = useState('')
 
     const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location);
 
     const handleSignIn = e =>{
         e.preventDefault()
@@ -21,7 +23,7 @@ const Login = () => {
         .then(result=> {
             console.log(result)
             setSuccess('Login Successful')
-            navigate('/')
+            navigate(location.state || '/')
         })
         .catch(error=>setError(error.message))
     }
