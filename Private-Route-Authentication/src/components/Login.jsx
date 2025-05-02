@@ -1,6 +1,6 @@
 import React, { use, useState } from 'react';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import AuthContext from '../contexts/AuthContext';
 
 const Login = () => {
@@ -9,6 +9,8 @@ const Login = () => {
     const [isPassVisible, setIsPassVisible] = useState(false)
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
+
+    const navigate = useNavigate()
 
     const handleSignIn = e =>{
         e.preventDefault()
@@ -19,6 +21,7 @@ const Login = () => {
         .then(result=> {
             console.log(result)
             setSuccess('Login Successful')
+            navigate('/')
         })
         .catch(error=>setError(error.message))
     }
