@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import { Link } from 'react-router';
-import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
 
